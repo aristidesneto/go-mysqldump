@@ -1,0 +1,25 @@
+aws:
+  bucket: my-bucket
+
+log:
+  path: /var/logs/go-mysqldump
+  level: debug
+
+storage:
+  directory: /var/backups/go-mysqldump
+
+compress:
+  type: bzip2
+
+databases:
+  - name: database1
+    charset: latin1
+  - name: database2
+    charset: utf8
+    ignore_tables:
+      - table1
+      - table2
+      - table3
+
+mysql:
+  port: 3306

@@ -1,25 +1,31 @@
+# Configurações da AWS S3 (opcional, caso deseje salvar os dumps em um bucket)
 aws:
-  bucket: my-bucket
+  bucket: my-bucket # Nome do bucket S3 onde os arquivos serão armazenados
 
+# Configurações de log
 log:
-  path: /var/logs/go-mysqldump
-  level: debug
+  path: /var/logs/go-mysqldump # Caminho do arquivo de log
+  level: debug # Nível de log: debug, info, warn, error
 
+# Configuração de armazenamento local
 storage:
-  directory: /var/backups/go-mysqldump
+  directory: /var/backups/go-mysqldump # Diretório local para salvar os dumps
 
+# Configuração de compressão dos arquivos de dump
 compress:
-  type: bzip2
+  type: bzip2 # Tipo de compressão: gzip, bzip2
 
+# Lista de bancos de dados a serem exportados
 databases:
-  - name: database1
-    charset: latin1
+  - name: database1 # Nome do banco de dados
+    charset: latin1 # Charset do banco
   - name: database2
     charset: utf8
-    ignore_tables:
+    ignore_tables: # Tabelas a serem ignoradas no dump (opcional)
       - table1
       - table2
       - table3
 
+# Configurações do MySQL
 mysql:
-  port: 3306
+  port: 3306 # Porta do servidor MySQL
